@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake News Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <video class="background-video" autoplay loop muted>
+        <source src="https://www.shutterstock.com/shutterstock/videos/1051091848/preview/stock-footage-many-hands-pointing-at-a-warning-message-text-appearing-and-disappearing-with-a-dissolve-effect.webm" type="video/mp4">
+    </video>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Fake News Detection</h1>
+        <div class="main_content">
+            <p>Enter a news article or headline below to check if it's fake.</p>
+            <textarea id="newsInput" placeholder="Paste your news text here..."></textarea><br>
+            <button onclick="checkNews()">Check News</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script>
+    function checkNews() {
+        let newsText = document.getElementById("newsInput").value;
+
+        fetch("/predict", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ news: newsText }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("result").innerText = "Prediction: " + data.prediction;
+        })
+        .catch(error => console.error("Error:", error));
+    }
+    </script>
+</body>
+</html>

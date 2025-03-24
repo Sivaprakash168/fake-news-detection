@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About - Fake News Detection</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: black;
+            color: white;
+        }
+
+        .background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        nav {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            padding-top: 80px;
+            max-width: 80%;
+        }
+
+        .main_content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            display: inline-block;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        /* Footer Styling */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1); /* Light transparent background */
+            text-align: center;
+            padding: 15px;
+        }
+
+        .footer a {
+            margin: 0 15px;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <video class="background-video" autoplay loop muted>
+        <source src="https://www.shutterstock.com/shutterstock/videos/1051091848/preview/stock-footage-many-hands-pointing-at-a-warning-message-text-appearing-and-disappearing-with-a-dissolve-effect.webm" type="video/mp4">
+    </video>
+
+    <nav>
+        <ul>
+            <!-- <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li> -->
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>About Fake News Detection</h1>
+        <div class="main_content">
+            <p>
+                Fake news often has the aim of damaging the reputation of a person or entity, or making money through advertising revenue.
+            </p>
+            <p>
+                Our Fake News Detection system uses advanced machine learning techniques to analyze text and classify it as real or fake.
+                 source credibility, and factual correctness.
+            </p>
+            <p>
+                Features of this system include: Machine learning algorithm used - Random Forest
+                <ul>
+                    <li>1. Preprocess the text – Convert to lowercase, remove numbers and punctuation</li>
+                    <li>2. Convert text into numerical form using TF-IDF Vectorizer</li>
+                    <li>3. Train the model using a Random Forest Classifier</li>
+                    <li>4. Evaluate accuracy and predict if new input is real or fake</li>
+                </ul>
+            </p>
+            <p>
+                Stay informed and ensure that the information you consume is reliable with our Fake News Detection tool!
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

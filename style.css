@@ -1,0 +1,93 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: black;
+    color: white;
+}
+
+.background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+nav {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.main_content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+textarea {
+    width: 80%;
+    height: 100px;
+    margin: 10px auto;
+    color: black;
+    display: block;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Footer Styling */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 15px;
+}
+
+.footer a {
+    margin: 0 15px;
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+}
